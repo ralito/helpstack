@@ -71,15 +71,16 @@
 - (void)showHelp:(UIViewController*)parentController completion:(void (^)(void))completion {
     
     UIViewController* mainController;
+   NSBundle *bundle = [NSBundle bundleForClass:self.class];
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UIStoryboard* helpStoryboard = [UIStoryboard storyboardWithName:@"HelpStackStoryboard-iPad" bundle:[NSBundle mainBundle]];
+        UIStoryboard* helpStoryboard = [UIStoryboard storyboardWithName:@"HelpStackStoryboard-iPad" bundle:bundle];
         mainController = [helpStoryboard instantiateInitialViewController];
         [mainController setModalPresentationStyle:UIModalPresentationFormSheet];
         [parentController presentViewController:mainController animated:YES completion:completion];
         
     }
     else {
-        UIStoryboard* helpStoryboard = [UIStoryboard storyboardWithName:@"HelpStackStoryboard" bundle:[NSBundle mainBundle]];
+        UIStoryboard* helpStoryboard = [UIStoryboard storyboardWithName:@"HelpStackStoryboard" bundle:bundle];
         mainController = [helpStoryboard instantiateInitialViewController];
         [parentController presentViewController:mainController animated:YES completion:completion];
     }
