@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author           = { "HappyFox" => "ios@happyfox.com" }
   s.platform         = :ios, '7.0'
   s.source           = { :git => "https://github.com/happyfoxinc/helpstack.git", :tag => "1.1.1", :submodules => true }
-  s.resources        = ['Resources/*.png','Resources/*.storyboard']
+  s.resources        = ['HelpStack/Resources/*.png','HelpStack/Resources/*.storyboard']
   s.dependency         'AFNetworking', '~> 2.0'
   s.frameworks       = 'UIKit', 'CoreGraphics'
   s.requires_arc     = true
